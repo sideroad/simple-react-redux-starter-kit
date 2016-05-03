@@ -10,7 +10,7 @@ import {
 
 export default () => {
   return (
-    <Route path="/" component={App}>
+    <Route path="/" component={App} >
       { /* Home (main) route */ }
       <IndexRoute component={HomeView} />
 

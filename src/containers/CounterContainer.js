@@ -8,21 +8,32 @@ import * as counterActions from '../modules/counter';
     counter: state.counter.counter
   }),
   {
-    increment: counterActions.increment
+    increment: counterActions.increment,
+    decrement: counterActions.decrement,
+    reset: counterActions.reset
   })
 export default class CounterContainer extends Component {
   static propTypes = {
     counter: PropTypes.number.isRequired,
-    increment: PropTypes.func.isRequired
+    increment: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired
   }
 
   render() {
     const {
       counter,
-      increment
+      increment,
+      decrement,
+      reset
     } = this.props;
     return (
-      <Counter counter={counter} increment={increment} />
+      <Counter
+        counter={counter}
+        increment={increment}
+        decrement={decrement}
+        reset={reset}
+      />
     );
   }
 }

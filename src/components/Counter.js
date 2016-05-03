@@ -1,11 +1,13 @@
 /* @flow */
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 
 export default class Counter extends Component {
   static propTypes = {
-    counter: React.PropTypes.number.isRequired,
-    increment: React.PropTypes.func.isRequired
+    counter: PropTypes.number.isRequired,
+    increment: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired
   };
 
   render() {
@@ -20,6 +22,12 @@ export default class Counter extends Component {
         </h2>
         <button className="btn btn-default" onClick={this.props.increment}>
           Increment
+        </button>
+        <button className="btn btn-default" onClick={this.props.decrement}>
+          Decrement
+        </button>
+        <button className="btn btn-default" onClick={this.props.reset}>
+          Reset
         </button>
       </div>
     );
